@@ -68,7 +68,7 @@ namespace PAIS_NIE
             //Task.Delay(2000).Wait();
             //driver.FindElement(By.Id("btnSearch")).Click();
             //Task.Delay(2000).Wait();
-            driver.FindElement(By.XPath("//span[@id='GridViewDept_LabelDID_3']")).Click();
+            driver.FindElement(By.XPath("//span[@id='GridViewDept_LabelDID_2']")).Click();
             Task.Delay(2000).Wait();
             driver.SwitchTo().Window(driver.WindowHandles.First());
             Task.Delay(2000).Wait();
@@ -113,14 +113,14 @@ namespace PAIS_NIE
             selecttax.SelectByText("CGST+SGST");
             Task.Delay(2000).Wait();
 
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextComment")).SendKeys("OIIUYUYUYU");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextComment")).SendKeys("rgtrevrgve");
             Task.Delay(2000).Wait();
 
             IWebElement element = driver.FindElement(By.XPath("//select[@id='DropDownListTermCond']"));
             //Create a select object 
             SelectElement select = new SelectElement(element);
             //select the option by text.
-            select.SelectByText("TCCAP");
+            select.SelectByText("TC001");
             Task.Delay(2000).Wait();
 
             var element3 = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_add"));
@@ -143,7 +143,7 @@ namespace PAIS_NIE
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_ItemIdsrc")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_ItemIdsrc")).Clear();
             Task.Delay(2000).Wait();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_ItemIdsrc")).SendKeys("002");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_ItemIdsrc")).SendKeys("1210");
             Task.Delay(2000).Wait();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_Itemsrc")).Click();
             Task.Delay(2000).Wait();
@@ -154,7 +154,7 @@ namespace PAIS_NIE
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_HSNLabel_0")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_HSNLabel_0")).Clear();
             Task.Delay(2000).Wait();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_HSNLabel_0")).SendKeys("HSN-04");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_HSNLabel_0")).SendKeys("HSN-06");
             Task.Delay(2000).Wait();
 
             IWebElement element2 = driver.FindElement(By.XPath("//select[@id='ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_DDLMatTax_0']"));
@@ -166,8 +166,12 @@ namespace PAIS_NIE
 
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_POQtyLabel_0")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_POQtyLabel_0")).Clear();
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_POQtyLabel_0")).SendKeys("30");
             Task.Delay(2000).Wait();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_POQtyLabel_0")).SendKeys("40");
+
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_UnitPriceText_0")).Click();
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_UnitPriceText_0")).Clear();
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_UnitPriceText_0")).SendKeys("10");
             Task.Delay(2000).Wait();
 
             var element5 = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_ButtonSave"));
@@ -214,27 +218,27 @@ namespace PAIS_NIE
             Assert.AreEqual("Local PO HOI", driver.FindElement(By.XPath("//span[@id='ContentPlaceHolder1_ContentPlaceHolder3_txtRoleName']")).Text);
             Task.Delay(2000).Wait();
 
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewSearch_BtnEditGridViewSearch_0")).Click();
-            Task.Delay(2000).Wait();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextComment")).Click();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextComment")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextComment")).SendKeys("qwewqeqeqwe");
-            Task.Delay(2000).Wait();
-
-            //driver.FindElement(By.XPath("//input[@id='ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_HSNLabel_0']")).Click();
-            //driver.FindElement(By.XPath("//input[@id='ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_HSNLabel_0']")).Clear();
-            //driver.FindElement(By.XPath("//input[@id='ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_HSNLabel_0']")).SendKeys("10");
+            //driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewSearch_BtnEditGridViewSearch_0")).Click();
+            //Task.Delay(2000).Wait();
+            //driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextComment")).Click();
+            //driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextComment")).Clear();
+            //driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextComment")).SendKeys("qwewqeqeqwe");
             //Task.Delay(2000).Wait();
 
-            var element4 = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_ButtonSaveEdit"));
-            var script4 = "arguments[0].scrollIntoView(true);";
-            IJavaScriptExecutor js4 = (IJavaScriptExecutor)driver;
-            js4.ExecuteScript(script4, element4);
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_ButtonSaveEdit")).Click();
-            driver.SwitchTo().Alert().Accept();
-            Task.Delay(2000).Wait();
+            ////driver.FindElement(By.XPath("//input[@id='ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_HSNLabel_0']")).Click();
+            ////driver.FindElement(By.XPath("//input[@id='ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_HSNLabel_0']")).Clear();
+            ////driver.FindElement(By.XPath("//input[@id='ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_HSNLabel_0']")).SendKeys("10");
+            ////Task.Delay(2000).Wait();
+
+            //var element4 = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_ButtonSaveEdit"));
+            //var script4 = "arguments[0].scrollIntoView(true);";
+            //IJavaScriptExecutor js4 = (IJavaScriptExecutor)driver;
+            //js4.ExecuteScript(script4, element4);
+            //driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_ButtonSaveEdit")).Click();
             //driver.SwitchTo().Alert().Accept();
             //Task.Delay(2000).Wait();
+            ////driver.SwitchTo().Alert().Accept();
+            ////Task.Delay(2000).Wait();
 
 
             var element7 = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewSearch_BtnEditGridViewView_0"));
@@ -242,8 +246,6 @@ namespace PAIS_NIE
             IJavaScriptExecutor js7 = (IJavaScriptExecutor)driver;
             js7.ExecuteScript(script7, element7);
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewSearch_BtnEditGridViewView_0")).Click();
-
-
             //driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewSearch_BtnEditGridViewView_0")).Click();
             Task.Delay(2000).Wait();
 
@@ -305,7 +307,7 @@ namespace PAIS_NIE
             Task.Delay(2000).Wait();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpDep")).Click();
             Task.Delay(1000).Wait();
-            new SelectElement(driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpDep"))).SelectByText("Department3");
+            new SelectElement(driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpDep"))).SelectByText("Department2");
             Task.Delay(2000).Wait();
 
             //var element1 = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpDep"));
@@ -327,7 +329,7 @@ namespace PAIS_NIE
 
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TxtInvNo")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TxtInvNo")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TxtInvNo")).SendKeys("355456545");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TxtInvNo")).SendKeys("7");
             Task.Delay(2000).Wait();
 
 
@@ -429,7 +431,7 @@ namespace PAIS_NIE
             //driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpbusUnit")).Click();
             Task.Delay(2000).Wait();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpDep")).Click();
-            new SelectElement(driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpDep"))).SelectByText("Department3");
+            new SelectElement(driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpDep"))).SelectByText("Department2");
             //driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpDep")).Click();
             Task.Delay(2000).Wait();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpGrp")).Click();
@@ -438,7 +440,7 @@ namespace PAIS_NIE
             Task.Delay(2000).Wait();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtContactNo")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtContactNo")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtContactNo")).SendKeys("333333333");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtContactNo")).SendKeys("156898988");
             Task.Delay(2000).Wait();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_DrpType")).Click();
             new SelectElement(driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_DrpType"))).SelectByText("indigenous");
@@ -446,7 +448,7 @@ namespace PAIS_NIE
             Task.Delay(2000).Wait();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextCmt")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextCmt")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextCmt")).SendKeys("fghfdhfghtr");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextCmt")).SendKeys("yewgwwrwgh");
             Task.Delay(2000).Wait();
 
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_add")).Click();
@@ -467,7 +469,7 @@ namespace PAIS_NIE
             Task.Delay(2000).Wait();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_Grid_ItemEntry_QtyReq_0")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_Grid_ItemEntry_QtyReq_0")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_Grid_ItemEntry_QtyReq_0")).SendKeys("55");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_Grid_ItemEntry_QtyReq_0")).SendKeys("60");
             Task.Delay(2000).Wait();
 
             var element3 = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_btnSave"));
@@ -590,7 +592,7 @@ namespace PAIS_NIE
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_ButtonDept")).Click();
             Task.Delay(2000).Wait();
             driver.SwitchTo().Window(driver.WindowHandles.Last());
-            driver.FindElement(By.Id("GridViewDept_LabelDID_3")).Click();
+            driver.FindElement(By.Id("GridViewDept_LabelDID_2")).Click();
             Task.Delay(2000).Wait();
             driver.SwitchTo().Window(driver.WindowHandles.First());
             Task.Delay(2000).Wait();
@@ -660,7 +662,7 @@ namespace PAIS_NIE
             IJavaScriptExecutor js4 = (IJavaScriptExecutor)driver;
             js4.ExecuteScript(script4, element4);
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_DDLMatTax_0")).Click();
-            new SelectElement(driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_DDLMatTax_0"))).SelectByText("Non-GST Item");
+            new SelectElement(driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_DDLMatTax_0"))).SelectByText("GST Item");
             Task.Delay(2000).Wait();
 
             var element9 = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_UnitPriceText_0"));
@@ -669,7 +671,7 @@ namespace PAIS_NIE
             js9.ExecuteScript(script9, element9);
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_UnitPriceText_0")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_UnitPriceText_0")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_UnitPriceText_0")).SendKeys("5");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridViewPODetails_UnitPriceText_0")).SendKeys("10");
             Task.Delay(2000).Wait();
 
 
@@ -832,7 +834,7 @@ namespace PAIS_NIE
             Task.Delay(2000).Wait();
 
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpDep")).Click();
-            new SelectElement(driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpDep"))).SelectByText("Department3");
+            new SelectElement(driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpDep"))).SelectByText("Department2");
             Task.Delay(2000).Wait();
 
             var element9 = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_BtnPOItem"));
@@ -859,7 +861,7 @@ namespace PAIS_NIE
 
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TxtInvNo")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TxtInvNo")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TxtInvNo")).SendKeys("05");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TxtInvNo")).SendKeys("06");
             Task.Delay(2000).Wait();
 
             IWebElement selectDate = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TxtInvDate"));
@@ -1125,12 +1127,12 @@ namespace PAIS_NIE
             Task.Delay(2000).Wait();
 
             driver.FindElement(By.Id("DropDownListTermCond")).Click();
-            new SelectElement(driver.FindElement(By.Id("DropDownListTermCond"))).SelectByText("IMLCD");
+            new SelectElement(driver.FindElement(By.Id("DropDownListTermCond"))).SelectByText("TCCAP");
             Task.Delay(2000).Wait();
 
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextComment")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextComment")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextComment")).SendKeys("tyjyjhgnmngf");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextComment")).SendKeys("yujhjnfhn");
             Task.Delay(2000).Wait();
 
 
@@ -1419,16 +1421,16 @@ namespace PAIS_NIE
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_btnSearch")).Click();
             Task.Delay(2000).Wait();
 
-            var element28 = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridView1_BtnEdit_2"));
+            var element28 = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridView1_BtnEdit_0"));
             var script28 = "arguments[0].scrollIntoView(true);";
             IJavaScriptExecutor js28 = (IJavaScriptExecutor)driver;
             js28.ExecuteScript(script28, element28);
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridView1_BtnEdit_2")).Click();
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_GridView1_BtnEdit_0")).Click();
             Task.Delay(2000).Wait();
 
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtRemarks")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtRemarks")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtRemarks")).SendKeys("retregdfg");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtRemarks")).SendKeys("WEWQETWQERWQTQE");
             Task.Delay(2000).Wait();
 
             var element1 = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_Btn_Save"));
@@ -1485,7 +1487,7 @@ namespace PAIS_NIE
 
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtVendorName")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtVendorName")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtVendorName")).SendKeys("SOUTHINDIAN MESS");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtVendorName")).SendKeys("INDIAN MESS");
             Task.Delay(2000).Wait();
 
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_BUDL")).Click();
@@ -1493,7 +1495,7 @@ namespace PAIS_NIE
             Task.Delay(2000).Wait();
 
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_EntityDL")).Click();
-            new SelectElement(driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_EntityDL"))).SelectByText("Individual");
+            new SelectElement(driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_EntityDL"))).SelectByText("Trust");
             Task.Delay(2000).Wait();
 
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_InfoStatusDrp")).Click();
@@ -1506,7 +1508,7 @@ namespace PAIS_NIE
 
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_PanNumTb")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_PanNumTb")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_PanNumTb")).SendKeys("ABCDE1004X");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_PanNumTb")).SendKeys("ABCDE1006X");
             Task.Delay(2000).Wait();
 
             var element12 = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_btnSave"));
@@ -1523,7 +1525,7 @@ namespace PAIS_NIE
 
             driver.FindElement(By.Id("PANSearchTb")).Click();
             driver.FindElement(By.Id("PANSearchTb")).Clear();
-            driver.FindElement(By.Id("PANSearchTb")).SendKeys("ABCDE1004X");
+            driver.FindElement(By.Id("PANSearchTb")).SendKeys("ABCDE1006X");
             Task.Delay(2000).Wait();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_ButtonSearch")).Click();
             Task.Delay(2000).Wait();
@@ -1544,12 +1546,12 @@ namespace PAIS_NIE
 
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_address1Tb")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_address1Tb")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_address1Tb")).SendKeys("UDIPI");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_address1Tb")).SendKeys("hebal");
             Task.Delay(2000).Wait();
 
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtVCity")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtVCity")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtVCity")).SendKeys("Manglore");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtVCity")).SendKeys("Banglore");
             Task.Delay(2000).Wait();
 
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_StateTb")).Click();
@@ -1559,7 +1561,7 @@ namespace PAIS_NIE
 
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_contactNumTb")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_contactNumTb")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_contactNumTb")).SendKeys("6564564564");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_contactNumTb")).SendKeys("8978748989");
             Task.Delay(2000).Wait();
 
             var element24 = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextStateCode"));
@@ -1584,7 +1586,7 @@ namespace PAIS_NIE
 
             driver.FindElement(By.Id("PANSearchTb")).Click();
             driver.FindElement(By.Id("PANSearchTb")).Clear();
-            driver.FindElement(By.Id("PANSearchTb")).SendKeys("ABCDE1004X");
+            driver.FindElement(By.Id("PANSearchTb")).SendKeys("ABCDE1006X");
             Task.Delay(2000).Wait();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_ButtonSearch")).Click();
             Task.Delay(2000).Wait();
@@ -1614,7 +1616,7 @@ namespace PAIS_NIE
 
             driver.FindElement(By.Id("PANSearchTb")).Click();
             driver.FindElement(By.Id("PANSearchTb")).Clear();
-            driver.FindElement(By.Id("PANSearchTb")).SendKeys("ABCDE1004X");
+            driver.FindElement(By.Id("PANSearchTb")).SendKeys("ABCDE1006X");
             Task.Delay(2000).Wait();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_ButtonSearch")).Click();
             Task.Delay(2000).Wait();
@@ -1657,16 +1659,16 @@ namespace PAIS_NIE
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpbusUnit")).Click();
             Task.Delay(2000).Wait();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpDep")).Click();
-            new SelectElement(driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpDep"))).SelectByText("Department3");
+            new SelectElement(driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpDep"))).SelectByText("Department2");
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpDep")).Click();
             Task.Delay(2000).Wait();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpGrp")).Click();
-            new SelectElement(driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpGrp"))).SelectByText("ALL");
+            new SelectElement(driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpGrp"))).SelectByText("Others");
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_drpGrp")).Click();
             Task.Delay(2000).Wait();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtContactNo")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtContactNo")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtContactNo")).SendKeys("3876785654");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_txtContactNo")).SendKeys("987984815");
             Task.Delay(2000).Wait();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_DrpType")).Click();
             new SelectElement(driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_DrpType"))).SelectByText("Import");
@@ -1674,7 +1676,7 @@ namespace PAIS_NIE
             Task.Delay(2000).Wait();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextCmt")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextCmt")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextCmt")).SendKeys("EWRETEHGG");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextCmt")).SendKeys("etretertertger");
             Task.Delay(2000).Wait();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_add")).Click();
             Task.Delay(2000).Wait();
@@ -1694,7 +1696,7 @@ namespace PAIS_NIE
             Task.Delay(2000).Wait();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_Grid_ItemEntry_QtyReq_0")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_Grid_ItemEntry_QtyReq_0")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_Grid_ItemEntry_QtyReq_0")).SendKeys("11");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_Grid_ItemEntry_QtyReq_0")).SendKeys("40");
             Task.Delay(2000).Wait();
 
             var element3 = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_btnSave"));
@@ -1808,7 +1810,7 @@ namespace PAIS_NIE
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_ButtonDept")).Click();
             Task.Delay(2000).Wait();
             driver.SwitchTo().Window(driver.WindowHandles.Last());
-            driver.FindElement(By.Id("GridViewDept_LabelDID_3")).Click();
+            driver.FindElement(By.Id("GridViewDept_LabelDID_2")).Click();
             Task.Delay(2000).Wait();
             driver.SwitchTo().Window(driver.WindowHandles.First());
             Task.Delay(2000).Wait();
@@ -1860,17 +1862,17 @@ namespace PAIS_NIE
             Task.Delay(2000).Wait();
 
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_DrpPOCurType")).Click();
-            new SelectElement(driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_DrpPOCurType"))).SelectByText("INR");
+            new SelectElement(driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_DrpPOCurType"))).SelectByText("USD");
             Task.Delay(2000).Wait();
 
             driver.FindElement(By.Id("POConRate")).Click();
             driver.FindElement(By.Id("POConRate")).Clear();
-            driver.FindElement(By.Id("POConRate")).SendKeys("10");
+            driver.FindElement(By.Id("POConRate")).SendKeys("20");
             Task.Delay(2000).Wait();
 
 
             driver.FindElement(By.Id("DropDownListTermCond")).Click();
-            new SelectElement(driver.FindElement(By.Id("DropDownListTermCond"))).SelectByText("TC001");
+            new SelectElement(driver.FindElement(By.Id("DropDownListTermCond"))).SelectByText("TCCON");
             Task.Delay(2000).Wait();
 
             var element1 = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_ImageAddCost"));
@@ -1886,7 +1888,7 @@ namespace PAIS_NIE
             js11.ExecuteScript(script11, element11);
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextBox1")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextBox1")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextBox1")).SendKeys("TEST2");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextBox1")).SendKeys("TEST3");
             Task.Delay(2000).Wait();
 
             var element12 = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextBoxCost1"));
@@ -1895,7 +1897,7 @@ namespace PAIS_NIE
             js12.ExecuteScript(script12, element12);
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextBoxCost1")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextBoxCost1")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextBoxCost1")).SendKeys("100");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TextBoxCost1")).SendKeys("200");
             Task.Delay(2000).Wait();
 
             var element13 = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_Button3"));
@@ -2072,7 +2074,7 @@ namespace PAIS_NIE
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_ButtonDept")).Click();
             Task.Delay(2000).Wait();
             driver.SwitchTo().Window(driver.WindowHandles.Last());
-            driver.FindElement(By.Id("GridViewDept_LabelDID_3")).Click();
+            driver.FindElement(By.Id("GridViewDept_LabelDID_2")).Click();
             Task.Delay(2000).Wait();
             driver.SwitchTo().Window(driver.WindowHandles.First());
             Task.Delay(2000).Wait();
@@ -2102,7 +2104,7 @@ namespace PAIS_NIE
 
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TxtInvNo")).Click();
             driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TxtInvNo")).Clear();
-            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TxtInvNo")).SendKeys("6");
+            driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TxtInvNo")).SendKeys("8");
             Task.Delay(2000).Wait();
 
             IWebElement selectDate = driver.FindElement(By.Id("ContentPlaceHolder1_ContentPlaceHolder3_TxtInvDate"));
